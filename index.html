@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<style>
+    body{
+        margin: auto;
+        display: grid;
+        width: 50%;
+        padding: 10px;
+        background-color: white;
+
+
+
+    }
+    .greet-box{
+        width: auto;
+        border-radius: 25px;
+        padding: 80px;
+        margin: 100px;
+        border: 2px;
+        align-items: center;
+        background-color: aliceblue;
+    }
+</style>
+
+</head>
+<body>
+    <div calss ="greet-box">
+        <h2 class="mb-4 text-center">Hello</h2>
+        <div class="mb-3">
+            <label for="nameInput" class="form-label">Name: </label>
+            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name">
+        </div>
+    
+     <!--button-->
+    <button onclick="greatUser()" class="btn btn-primary w-100">Next </button>
+
+    <!--Container for greeting alert-->
+    <div class="alert alert-info mt-4 d-none" id="greetingAlert" role="alert">
+</div>
+    <script>
+        function greetUser() {
+            const name =document.getElementById("nameInput").value;
+            const alertBox = document.getElementById("greetingAlert");
+
+
+            if(name.trim() !== ""){
+                alertBox.innerText = `Hello, ${name}! Welcome!`;
+                alertBox.classlist.remove("d-none");
+            }else{
+                alertBox.innerText = "Please enter your name!"
+                alertBox.classlist.remove("d-none");
+                alertBox.classlist.replace("alert-info", "alert-warning");
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
